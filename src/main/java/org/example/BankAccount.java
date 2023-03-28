@@ -22,20 +22,29 @@ public class BankAccount {
     }
 
 //    deposit method
-    public void deposit(double amount){
-        this.balance += amount;
-        System.out.println("Your new balance is " + this.balance );
+    public double deposit(double amount){
+        return this.balance += amount;
+//        System.out.println("Your new balance is " + this.balance );
     }
 
-//    withdrawal method
-    public void withdrawal(double amount){
-        if(this.balance - amount < this.overdraft){
-            System.out.println("You cannot withdraw money now, you have reached your overdraft limit!!");
-        } else {
-            this.balance -= amount;
-            System.out.println("Your new balance is " + this.balance);
-        }
+//    original withdrawal method
+    public double withdrawal(double amount){
+        return this.balance -= amount;
+//        System.out.println("Your new balance is " + this.balance );
+
     }
+
+
+//    updated withdrawal method
+
+    /* public void withdrawal(double amount){
+       if(this.balance - amount < this.overdraft){
+           System.out.println("You cannot withdraw money now, you have reached your overdraft limit!!");
+       } else {
+           this.balance -= amount;
+           System.out.println("Your new balance is " + this.balance);
+      }
+   } */
 
 // payInterest method
 
