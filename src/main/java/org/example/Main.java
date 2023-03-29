@@ -26,8 +26,12 @@ public class Main {
         System.out.println(person.getOverdraft());
 
 //        checking the methods
-        int withdrawalAmount = 50;
+        int withdrawalAmount = 600;
         System.out.println(person.withdrawal(withdrawalAmount));
+
+        //checking withdrawal method with overdraft limit
+        System.out.println(person.withdrawalWithOverdraft(withdrawalAmount));
+
 
         int depositAmount = 100;
         System.out.println(person.deposit(depositAmount));
@@ -35,6 +39,8 @@ public class Main {
 //        fixed interest rate of 1.5% for current account
         double interestRate = 1.5;
         System.out.println(person.payInterest(interestRate));
+
+
 
     }
 }

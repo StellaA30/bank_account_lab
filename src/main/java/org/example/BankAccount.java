@@ -36,15 +36,14 @@ public class BankAccount {
 
 
 //    withdrawal method - extension work
-
-    /* public void withdrawal(double amount){
+     public String withdrawalWithOverdraft(double amount){
        if(this.balance - amount < this.overdraft){
-           System.out.println("You cannot withdraw money now, you have reached your overdraft limit!!");
+           return "You cannot withdraw money now, you have reached your overdraft limit!!";
        } else {
            this.balance -= amount;
-           System.out.println("Your new balance is " + this.balance);
+           return "Your new balance is " + this.balance;
       }
-   } */
+   }
 
 // payInterest method
 

@@ -12,6 +12,8 @@ public class BankAccountTest {
     public void setUp(){
         bankAccount = new BankAccount("Stella", "Annor", "30.05.1997", 12345, "current");
     }
+
+//    testing the object properties/attributes
     @Test
     public void confirmFirstName(){
         String expected = "Stella";
@@ -47,6 +49,34 @@ public class BankAccountTest {
         double expected = -300;
         assertThat(bankAccount.getOverdraft()).isEqualTo(expected);
     }
+
+//testing the object methods
+
+    @Test
+    public void canWithdrawMoney(){
+        double actual = bankAccount.withdrawal(100);
+        assertThat(actual).isEqualTo(-100);
+    }
+    @Test
+    public void canDepositMoney(){
+        double actual = bankAccount.deposit(100);
+        assertThat(actual).isEqualTo(100);
+    }
+    @Test
+    public void confirmInterestRate(){
+        bankAccount.setBalance(100);
+        double actual = bankAccount.payInterest(2.5);
+        double expected = 102.5;
+        assertThat(actual).isEqualTo(expected);
+    }
+    @Test
+    public void canWithdrawWithOverdraft(){
+        String expected = "You cannot withdraw money now, you have reached your overdraft limit!!";
+        assertThat(bankAccount.withdrawalWithOverdraft(600)).isEqualTo(expected);
+    }
+
+
+
 
 
 
